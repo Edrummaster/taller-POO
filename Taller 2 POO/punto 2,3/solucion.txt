@@ -1,0 +1,108 @@
+/****************************
+*****************************
+****** S O L U C I O N ******
+*****************************
+*****************************/
+
+/*
+
+Primer Punto
+------------------------------
+  -Revisar main.cpp
+
+
+
+Segundo Punto
+------------------------------
+    -La salida fue:
+
+  		Mamifero c o n s t r u c t o r . . .
+  		Perro c o n s t r u c t o r . . .
+		El mamifero se mueve
+		El mamifero habla? Changos!
+
+
+
+	-Eliminando la palabra clave virtual, la salida fue:
+
+	 	Mamifero c o n s t r u c t o r . . .
+  		Perro c o n s t r u c t o r . . .
+		El mamifero se mueve
+		El mamifero habla? Changos!
+
+
+
+	-Descomentando el inciso comentado, la salida final fue exactamente
+	 la misma a la version del codigo anterior:
+
+	 	Mamifero c o n s t r u c t o r . . .
+  		Perro c o n s t r u c t o r . . .
+		El mamifero se mueve
+		El mamifero habla? Changos!
+
+
+Tercer Punto
+---------------------------------------------------------
+	-La salida del programa fue:
+
+		El mamifero habla? Changos!
+		El mamifero habla? Changos!
+		El mamifero habla? Changos!
+		El mamifero habla? Changos!
+		Mamifero d e s t r u c t o r
+		Mamifero d e s t r u c t o r
+		Mamifero d e s t r u c t o r
+		Mamifero d e s t r u c t o r 
+
+
+Cuarto Punto
+------------------------------------------------------------
+	-Los atributos y metodos heredados pasan a las siguientes generaciones
+	 en funcion de el control de acceso a la clase base, de la cual se deriva
+	 
+	 Para cada caso respectivamente se tiene que :
+
+	 _______________________________________________
+	| Derivacion  |  Clase Base  |  Clase Derivada  |   
+	------------------------------------------------
+	|             |   privada    |   inaccesible    |
+	| publica     |   publica    |   publica        |
+	|             |   protegida  |	 privada        |
+	 -----------------------------------------------
+	|             |   privada    |	 inaccesible    |
+	| privada     |   publica    |   privada        |
+	|             |   protegida  |   privada        |
+	------------------------------------------------
+	|             |   privada    |   inaccesible    |
+	| protegida   |   publica    |   protegida      |
+	|             |   protegida  |   protegida      |
+	 -----------------------------------------------
+	
+	en conclusion:
+		-si la clase se hereda como privada, entonces los miembros solo son accesibles en clase base
+		-si la clase se hereda como publica, entonces se conserva el nivel de acceso
+		-si la clase se hereda como protegida, entonces los miembros se heredan como protegidos
+
+
+	-Si se deriva la clase perro de Mamifero, considerando que la clase base sobreescribe un metodo de Animal
+	 se tiene que la clase perro hereda los metodos que posea su clase base(padre) es decir, por consiguiente 
+	 la clase Mamifero(metodo reescrito).
+
+
+	 -Una clase hijo puede volver privado un metodo public heredado, ya que la interfaz publica es accesible en 
+	  todo el programa, ademas C++ incorpora una funcion de nivel de acceso para los metodos heredados.
+
+
+	 -En primer lugar si una clase tiene un metodo virtual, entonces la clase sera de tipo abstracto, la cual no se
+	  puede instanciar ya que es como su nombre lo indica "abstracta" y por lo tanto no tendria sentido ejecutar tal operacion. 
+	  Este tipo de clases son utiles en cierta parte de la implementacion de ciertos algoritmos, ya que no siempre las clases a
+	  utilizar seran de este tipo, por otro lado cabe considerar que "cuando se hereda una clase abstracta, hay que implementar 
+	  todas las funciones virtuales de la clase base, o la clase que hereda se convierte en una nueva clase abstracta. "
+	  ref: http://arco.esi.uclm.es/~david.villa/pensar_en_C++/vol1/ch15s07.html
+
+
+	  Para redefinir una función virtual en una clase derivada, las declaraciones en la clase base y en la derivada deben coincidir en cuanto a número y tipo de los parámetros. 
+	  Excepcionalmente pueden diferir en el tipo devuelto; este caso es discutido más adelante
+
+
+	 -Error del codigo del punto 6, no se puede usar como argumento a Dibujo ya que este es una clase abstracta.
